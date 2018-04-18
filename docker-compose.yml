@@ -1,0 +1,15 @@
+joomla:
+  image: joomla
+  links:
+    - joomladb:mysql
+  ports:
+    - 8080:80
+  volumes:
+    - ~/Work/Verge/joomla:/var/www/html
+
+joomladb:
+  image: mysql:5.6
+  environment:
+    MYSQL_ROOT_PASSWORD: example
+  volumes:
+    - ~/Work/Verge/joomla_mysql:/var/lib/mysql
